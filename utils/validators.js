@@ -32,3 +32,9 @@ exports.registerValidators = [
         .withMessage('Name have to cosist min form 3 symbs')
         .trim()
 ]
+
+exports.courseValidators = [
+    body('title').isLength({min: 3}).withMessage('Min length 3 symbs').trim(),
+    body('price').isNumeric().withMessage('Enter the correct price!'),
+    body('img', 'Enter the correct URL address!').isURL()
+]
